@@ -1,24 +1,54 @@
-<html>
+<html style="margin:0; padding:0;">
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Sarina&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="zodiacsign.js"></script>
         <script src="work.js"></script>
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Astrological Mood Board Generator</a>
-        </nav>
-        <form>
-            <div class="form-group">
-                <label for="birthday">Birthdate</label>
-                <input type="password" class="form-control" id="birthdate">
+    <body style="margin:0; padding:0;">
+        <div style="height:100vh;">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Astrological Mood Board Generator</a>
+            </nav>
+            
+            <div class="row" style="margin: 50px 0;">
+                <div class="col-4 row"></div>
+                <div class="col-4">
+                    <canvas style="border: 1px solid lightgrey; width:500px; height:500px;"></canvas>
+
+                    <form id="form" style="margin:20px auto;">
+                        <div class="row">
+                            <label class="form-input col-6" style="font-size:1.5em;" for="birthdate">Enter your birthdate</label> 
+                            <input type="date" class="form-control col-6" id="birthdate">
+                        </div>
+                        
+                        <!--<div class="row">
+                            <p class="col-3">Include</p>
+                            
+                            <div class="col-3 form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="sunSign">
+                                <label class="form-check-label" for="sunSign">Sun sign</label>
+                            </div>
+                            <div class="col-3 form-group form-check">
+                                <input type="checkbox" class="form-check-input disabled" id="moonSign">
+                                <label class="form-check-label" for="risingSign">Moon sign</label>
+                            </div>
+                            <div class="col-3 form-group form-check">
+                                <input type="checkbox" class="form-check-input disabled" id="moonSign">
+                                <label class="form-check-label" for="risingSign">Rising sign</label>
+                            </div>
+                        </div>-->
+
+                        <button  type="submit" class="btn btn-dark">Generate</button>
+                    </form>
+                </div>
+                <div class="col-4 row"></div>
+            <div>
+        
+            <div class="bg-dark row" style="color:white; height:50px; width:100vw; margin:0;">
+                <p style="margin:10px auto;">© Copyright 2020 - Genesis Barrios</p>
             </div>
-            <p>Include</p>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="sunSign">
-                <label class="form-check-label" for="sunSign">Sun sign</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </body>
 </html>
