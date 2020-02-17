@@ -60,7 +60,7 @@ var keywords = {
     'sagittarius': ['chaos', 'bookshelves', 'sun']
 }
 
-var BaseUrl = 'https://pixabay.com/api/?key=&per_page=200';
+var BaseUrl = 'https://pixabay.com/api/?key=10334784-5a6c500e9cfaf7c62d8dd4e2f&per_page=200';
 var UrlZodiac ='';
 var UrlSymbol = '';
 var UrlColor = '';
@@ -82,7 +82,8 @@ function generateBG(){
         url: buildUrlZodiacSign(),
         type: "GET",
         success: function(result){
-            applyImageZodiac(result);
+            applyImage(result);
+            generateColorImg()
         },
         error: function(error){
             console.log('Error ${error}')
@@ -95,7 +96,7 @@ function generateColorImg(){
         url: buildUrlColor(),
         type: "GET",
         success: function(result){
-            applyImageColor(result);
+            applyImage(result);
         },
         error: function(error){
             console.log('Error ${error}')
@@ -103,6 +104,18 @@ function generateColorImg(){
     })
 }
 
+function generateSymbolImg(){
+    $.ajax({
+        url: buildUrlSymbol(),
+        type: "GET",
+        success: function(result){
+            applyImageSymbol(result);
+        },
+        error: function(error){
+            console.log('Error ${error}')
+        }
+    })
+}
 
 //build url functions
 function buildUrlZodiacSign(){
@@ -173,8 +186,8 @@ var fitImageOn = function(canvas, img) {
     context.drawImage(img, x, y, width, height);
 };
 
-//apply color image to canvas
-function applyImageColor(result){
+//apply image to canvas
+function applyImage(result){
     var img = result.hits[randomNumber(0, result.hits.length)]
     
     var imageurl = img.largeImageURL;
